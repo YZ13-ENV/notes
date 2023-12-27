@@ -1,6 +1,6 @@
 import { notes } from "@/api/notes"
-import { Markdown } from "@/components/shared/markdown"
 import { cookies } from "next/headers"
+import { MDXRemote } from 'next-mdx-remote/rsc'
 
 type Props = {
     params: {
@@ -19,7 +19,7 @@ const page = async({ params }: Props) => {
     return (
         <div className="max-w-6xl mx-auto w-full flex flex-col gap-6 px-6 py-12">
             <h1 className='lg:text-5xl text-2xl font-semibold normal-case text-accent-foreground'>{ note.name }</h1>
-            <Markdown pageMode>{ note.content }</Markdown>
+            <MDXRemote source={ note.content } />
         </div>
     )
 }

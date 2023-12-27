@@ -7,4 +7,5 @@ export type Note = {
     pinned: boolean
     members?: string[] 
 }
+export type PartialDocNote = { doc_id?: string } & Note
 export type DocNote = { doc_id: string } & Note

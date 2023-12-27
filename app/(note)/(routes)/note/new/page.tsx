@@ -1,13 +1,22 @@
-'use client'
 
+import { notes } from "@/api/notes"
 import NewNoteForm from "@/app/(note)/_components/new-note-form"
-import { useAuthState } from "@/hooks/useAuthState"
-import { auth } from "@/utils/app"
-
-const Page = () => {
-    const [user] = useAuthState(auth)
-    if (!user) return null
-    return <NewNoteForm user={user} />
+import { cookies } from "next/headers"
+import { redirect } from "next/navigation"
+type Props = {
+    searchParams: {
+        noteId?: string
+    }
+}
+const page = async ({ searchParams }: Props) => {
+    const cookiesList = cookies()
+    const uidCookie = cookiesList.get('uid')
+    const uid = uidCookie ? uidCookie.value : null
+    const noteId = searchParams.noteId
+    const note = noteId ? await notes.getNoteById(noteId) : null
+    if (!uid) redirect('/')
+    if (uid && noteId && !note) redirect('/note/new')
+    return <NewNoteForm noteId={noteId} preloadNote={note} />
 }
 
-export default Page
+export default page

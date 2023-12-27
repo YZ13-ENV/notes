@@ -1,13 +1,14 @@
 import { notes } from "@/api/notes"
 import { cookies } from "next/headers"
 import { MDXRemote } from 'next-mdx-remote/rsc'
+import NoteControls from "@/app/(note)/_components/note-controls"
 
 type Props = {
     params: {
         noteId: string
     }
 }
-const page = async({ params }: Props) => {
+const Page = async({ params }: Props) => {
     const cookiesList = cookies()
     const uidCookie = cookiesList.get('uid')
     const uid = uidCookie ? uidCookie.value : null
@@ -19,9 +20,14 @@ const page = async({ params }: Props) => {
     return (
         <div className="max-w-6xl mx-auto w-full flex flex-col gap-6 px-6 py-12">
             <h1 className='lg:text-5xl text-2xl font-semibold normal-case text-accent-foreground'>{ note.name }</h1>
+            {
+                (isAuthor || isMember) &&
+                <NoteControls noteId={params.noteId} 
+                isMember={isMember} isAuthor={isAuthor} />
+            }
             <MDXRemote source={ note.content } />
         </div>
     )
 }
 
-export default page
+export default Page

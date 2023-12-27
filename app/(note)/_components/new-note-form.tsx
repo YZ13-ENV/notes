@@ -6,7 +6,6 @@ import { Note, PartialDocNote } from "@/types/notes"
 import { DateTime } from "luxon"
 import { useRouter } from "next/navigation"
 import { useState } from "react"
-import { BiHide, BiShow } from "react-icons/bi"
 import { ForwardRefEditor } from "@/components/shared/markdown-v2-forward-ref"
 import { useAuthState } from "react-firebase-hooks/auth"
 import { auth } from "@/utils/app"
@@ -19,7 +18,6 @@ const NewNoteForm = ({ noteId: providedNoteId, preloadNote }: Props) => {
     const note = preloadNote
     const [user] = useAuthState(auth)
     const [name, setName] = useState<string>(note ? note.name : '')
-    const [preview, setPreview] = useState<boolean>(false)
     const [loading, setLoading] = useState<boolean>(false)
     const [content, setContent] = useState<string>(note ? note.content : '')
     const regExp = /[\w\[\]`!@#$%\^&*()={}:;<>+'-]*/g
@@ -34,7 +32,6 @@ const NewNoteForm = ({ noteId: providedNoteId, preloadNote }: Props) => {
     const validName = regExp.test(name)
     const clearForm = () => {
         setName('')
-        setPreview(false)
         setContent('')
     }
     const createNote = async() => {
@@ -79,7 +76,6 @@ const NewNoteForm = ({ noteId: providedNoteId, preloadNote }: Props) => {
             <Input placeholder='Введите название заметки' value={name} onChange={ e => setName(e.target.value ) } disabled={!!note}
             className="px-0 lg:text-5xl text-2xl font-semibold normal-case text-accent-foreground border-0 h-fit !ring-0"/>
             <div className="w-fit h-fit py-6 flex items-center gap-2">
-                <Button onClick={() => setPreview(!preview)} size='icon' variant={preview ? 'default' : 'outline'}>{ preview ? <BiHide /> : <BiShow />}</Button>
                 <Button onClick={createNote} disabled={loading || !validName}>
                     {note ? 'Обновить' : 'Создать'}
                 </Button>

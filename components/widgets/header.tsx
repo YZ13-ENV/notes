@@ -1,8 +1,9 @@
 import Link from "next/link"
 import NotesMark from "../shared/notes-mark"
-import User from "../shared/user"
 import { Button } from "../ui/button"
 import { cookies } from "next/headers"
+import User from "../shared/user-circle"
+import { ProjectsGrid } from "ui"
 
 const Header = () => {
     const cookiesList = cookies()
@@ -16,6 +17,7 @@ const Header = () => {
                     {
                         uid && <Button size='sm'><Link href='/note/new'>Добавить</Link></Button>
                     }
+                    <ProjectsGrid />
                     <User />
                 </div>
             </div>

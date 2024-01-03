@@ -1,8 +1,8 @@
 import { notes } from '@/api/notes'
-import { cookies } from 'next/headers'
-import { Markdown } from '../shared/markdown'
-import { DateTime } from 'luxon'
 import Link from 'next/link'
+import { cookies } from 'next/headers'
+import { BiPlus } from 'react-icons/bi'
+import NoteCard from '../shared/note-card'
 
 const NotesGrid = async() => {
     const cookiesList = cookies()
@@ -15,19 +15,14 @@ const NotesGrid = async() => {
         </div>
     )
     return (
+        // 
         <div className="w-full gap-6 h-fit shrink-0 break-inside-avoid xl:columns-4 lg:columns-3 md:columns-2 columns-1">
             {
-                notesList.map(note => 
-                    <Link href={`/note/${note.doc_id}`} key={note.doc_id} className='rounded-xl p-4 transition-colors border group bg-background hover:bg-card hover:border-primary cursor-pointer relative inline-flex flex-col w-full gap-2 mb-6 h-fit'>
-                        <span className='normal-cate text-lg font-semibold'>{note.name}</span>
-                        <Markdown>{ note.content.length > 250 ? note.content.slice(0, 250) + '...' : note.content }</Markdown>
-                        <hr className='mt-1' />
-                        <div className="w-full h-fit flex items-center justify-end">
-                            <span className='text-sm normal-case text-muted-foreground'>{ DateTime.fromSeconds(note.createdAt).setLocale('ru').toFormat(' dd MMMM yyyy ') }</span>
-                        </div>
-                    </Link>
-                )
+                notesList.map(note => <NoteCard key={note.doc_id} note={note} /> )
             }
+            <Link href="/note/new" className='rounded-xl p-4 transition-colors border bg-background hover:bg-card hover:border-primary cursor-pointer inline-flex flex-col w-full items-center justify-center gap-2 mb-6 h-32'>
+                <BiPlus size={24} className='text-muted-foreground' />
+            </Link>
         </div>
     )
 }

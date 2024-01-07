@@ -19,7 +19,7 @@ const User = ({ size=36 }: Props) => {
         .then(data => setIsSubscriber(data ? data.isSubscriber : false))
     },[user])
     return (
-        <UserCircle size={size} isSubscriber={isSubscriber}
+        <UserCircle size={size} isSubscriber={isSubscriber} 
         activeMenu={isTabletOrMobile ? 'mobile' : 'desktop'} user={user as User | undefined} buttonSize='lg' />
     )
 }

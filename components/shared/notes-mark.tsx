@@ -1,14 +1,12 @@
+import Image from "next/image"
+import { cdn } from "@/helpers/cdn"
 import { config } from "@/app.config"
-import RemoteServerLogo from "./remote/remote-logo-server"
 
 const NotesMark = () => {
     return (
         <div className="flex items-center gap-2 w-fit h-fit">
-            <div className="w-fit h-fit items-center gap-2 sm:flex hidden">
-                <RemoteServerLogo dark={config.remote.logo.dark} light={config.remote.logo.light} size={24} alt="dm-logo" />
-                <span className="text-xl text-muted-foreground">\</span>
-            </div>
-            <h1 className="text-xl font-semibold text-center text-accent-foreground">Заметки</h1>
+            <Image src={cdn('dm/icons/keeper-dark.svg')} width={24} height={24} alt="keeper-logo" />
+            <span className="text-xl md:inline hidden font-semibold text-center text-accent-foreground">{ config.name }</span>
         </div>
     )
 }

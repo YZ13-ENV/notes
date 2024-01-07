@@ -1,11 +1,11 @@
 import { AppConfig } from "./types/config";
 
 export const config: AppConfig = {
-    name: "notes",
-    version: "0.0.0",
+    name: "Keeper",
+    version: "0.0.1",
     status: "development",
     app: {
-        hasAuthPage: false,
+        hasAuthPage: true,
         hasDashboardPage: false,
         hasProfilePageByNickname: false,
         hasHomePage: false,

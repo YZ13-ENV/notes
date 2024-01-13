@@ -19,7 +19,7 @@ const NoteControls = ({ noteId, isMember=false, isAuthor=false }: Props) => {
         push(`/note/new?noteId=${noteId}`)
     }
     return (
-        <div className='flex items-center gap-2'>
+        <div className='flex items-center gap-2 mb-6'>
             {
                 (isMember || isAuthor) &&
                 <Button onClick={getEditNote} variant='outline' className='gap-2'>

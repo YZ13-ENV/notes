@@ -18,7 +18,7 @@ const Page = async({ params }: Props) => {
     const hasAccess = note ? isAuthor || isMember : false
     if (!hasAccess || !note) return null
     return (
-        <div className="max-w-6xl mx-auto w-full flex flex-col gap-6 px-6 py-12">
+        <div className="max-w-6xl mx-auto w-full flex flex-col px-6 py-12 md-layout">
             <h1 className='lg:text-5xl text-2xl font-semibold normal-case text-accent-foreground'>{ note.name }</h1>
             {
                 (isAuthor || isMember) &&

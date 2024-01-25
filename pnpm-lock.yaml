@@ -94,7 +94,7 @@ dependencies:
     version: 1.0.7(tailwindcss@3.4.0)
   ui:
     specifier: github:yz13-env/ui
-    version: github.com/yz13-env/ui/61cad80834942664181887b5ab5d109f35c4260d(@types/react-dom@18.2.18)(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(tailwindcss@3.4.0)
+    version: github.com/yz13-env/ui/d622954535bdf7fd5956111cf7483dcaee87a65c(@types/react-dom@18.2.18)(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(tailwindcss@3.4.0)
   vaul:
     specifier: ^0.8.0
     version: 0.8.0(@types/react-dom@18.2.18)(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)
@@ -102,7 +102,7 @@ dependencies:
 devDependencies:
   '@mdxeditor/editor':
     specifier: ^1.14.3
-    version: 1.14.3(@codemirror/language@6.10.0)(@lezer/common@1.2.1)(@lezer/highlight@1.2.0)(@types/react-dom@18.2.18)(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(yjs@13.6.10)
+    version: 1.14.3(@codemirror/language@6.10.0)(@lezer/common@1.2.1)(@lezer/highlight@1.2.0)(@types/react-dom@18.2.18)(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(yjs@13.6.11)
   '@types/jsonwebtoken':
     specifier: ^9.0.5
     version: 9.0.5
@@ -248,10 +248,10 @@ packages:
     resolution: {integrity: sha512-2vaNn9aPGCRFKWcHPFksctzJ8yS5p7YoaT+jHpc0UGKzNuAIx4qy6R5wiqbP+heEEdyaABA582mNqSHzSoYdmg==}
     dependencies:
       '@codemirror/state': 6.4.0
-      '@codemirror/view': 6.23.0
+      '@codemirror/view': 6.23.1
       '@lezer/common': 1.2.1
       '@lezer/highlight': 1.2.0
-      '@lezer/lr': 1.3.14
+      '@lezer/lr': 1.4.0
       style-mod: 4.1.0
     dev: true
 
@@ -307,8 +307,8 @@ packages:
       w3c-keyname: 2.2.8
     dev: true
 
-  /@codemirror/view@6.23.0:
-    resolution: {integrity: sha512-/51px9N4uW8NpuWkyUX+iam5+PM6io2fm+QmRnzwqBy5v/pwGg9T0kILFtYeum8hjuvENtgsGNKluOfqIICmeQ==}
+  /@codemirror/view@6.23.1:
+    resolution: {integrity: sha512-J2Xnn5lFYT1ZN/5ewEoMBCmLlL71lZ3mBdb7cUEuHhX2ESoSrNEucpsDXpX22EuTGm9LOgC9v4Z0wx+Ez8QmGA==}
     dependencies:
       '@codemirror/state': 6.4.0
       style-mod: 4.1.0
@@ -1094,7 +1094,7 @@ packages:
       lexical: 0.12.5
     dev: true
 
-  /@lexical/react@0.12.5(lexical@0.12.5)(react-dom@18.2.0)(react@18.2.0)(yjs@13.6.10):
+  /@lexical/react@0.12.5(lexical@0.12.5)(react-dom@18.2.0)(react@18.2.0)(yjs@13.6.11):
     resolution: {integrity: sha512-pAbJQksin223Yp1p1VsPKxkRtSppVij+HcLTzP89q2QuSA0z0p/T+f5jZjs8eV6tecMtmrjizhdLTbk0jkej1w==}
     peerDependencies:
       lexical: 0.12.5
@@ -1117,7 +1117,7 @@ packages:
       '@lexical/table': 0.12.5(lexical@0.12.5)
       '@lexical/text': 0.12.5(lexical@0.12.5)
       '@lexical/utils': 0.12.5(lexical@0.12.5)
-      '@lexical/yjs': 0.12.5(lexical@0.12.5)(yjs@13.6.10)
+      '@lexical/yjs': 0.12.5(lexical@0.12.5)(yjs@13.6.11)
       lexical: 0.12.5
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
@@ -1176,7 +1176,7 @@ packages:
       lexical: 0.12.5
     dev: true
 
-  /@lexical/yjs@0.12.5(lexical@0.12.5)(yjs@13.6.10):
+  /@lexical/yjs@0.12.5(lexical@0.12.5)(yjs@13.6.11):
     resolution: {integrity: sha512-GNiRND/8ePdTWuSDFloPo/1355V0ce6OtH/25qxCq5D9MLNiIkAcwqQfnWFUdOtVMuNJOVc4OfCE9ARCGuEjyQ==}
     peerDependencies:
       lexical: 0.12.5
@@ -1184,7 +1184,7 @@ packages:
     dependencies:
       '@lexical/offset': 0.12.5(lexical@0.12.5)
       lexical: 0.12.5
-      yjs: 13.6.10
+      yjs: 13.6.11
     dev: true
 
   /@lezer/common@1.1.2:
@@ -1229,6 +1229,12 @@ packages:
       '@lezer/common': 1.1.2
     dev: true
 
+  /@lezer/lr@1.4.0:
+    resolution: {integrity: sha512-Wst46p51km8gH0ZUmeNrtpRYmdlRHUpN1DQd3GFAyKANi8WVz8c2jHYTf1CVScFaCjQw1iO3ZZdqGDxQPRErTg==}
+    dependencies:
+      '@lezer/common': 1.2.1
+    dev: true
+
   /@lezer/markdown@1.2.0:
     resolution: {integrity: sha512-d7MwsfAukZJo1GpPrcPGa3MxaFFOqNp0gbqF+3F7pTeNDOgeJN1muXzx1XXDPt+Ac+/voCzsH7qXqnn+xReG/g==}
     dependencies:
@@ -1270,7 +1276,7 @@ packages:
       react: 18.2.0
     dev: false
 
-  /@mdxeditor/editor@1.14.3(@codemirror/language@6.10.0)(@lezer/common@1.2.1)(@lezer/highlight@1.2.0)(@types/react-dom@18.2.18)(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(yjs@13.6.10):
+  /@mdxeditor/editor@1.14.3(@codemirror/language@6.10.0)(@lezer/common@1.2.1)(@lezer/highlight@1.2.0)(@types/react-dom@18.2.18)(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(yjs@13.6.11):
     resolution: {integrity: sha512-V4x4kafUxN7Nu1za4okSUVsC9HVpLMxGgdF8xIJZxlPgbWdDdYcxsKCf1C150zZoM5wNIL15SSV4/Gmlh06sBg==}
     engines: {node: '>=16'}
     peerDependencies:
@@ -1287,7 +1293,7 @@ packages:
       '@lexical/list': 0.12.5(lexical@0.12.5)
       '@lexical/markdown': 0.12.5(@lexical/clipboard@0.12.5)(@lexical/selection@0.12.5)(lexical@0.12.5)
       '@lexical/plain-text': 0.12.5(@lexical/clipboard@0.12.5)(@lexical/selection@0.12.5)(@lexical/utils@0.12.5)(lexical@0.12.5)
-      '@lexical/react': 0.12.5(lexical@0.12.5)(react-dom@18.2.0)(react@18.2.0)(yjs@13.6.10)
+      '@lexical/react': 0.12.5(lexical@0.12.5)(react-dom@18.2.0)(react@18.2.0)(yjs@13.6.11)
       '@lexical/rich-text': 0.12.5(@lexical/clipboard@0.12.5)(@lexical/selection@0.12.5)(@lexical/utils@0.12.5)(lexical@0.12.5)
       '@lexical/selection': 0.12.5(lexical@0.12.5)
       '@lexical/utils': 0.12.5(lexical@0.12.5)
@@ -2559,6 +2565,10 @@ packages:
     resolution: {integrity: sha512-UY+FGM/2jjMkzQLn8pxcHGMaVLh9aEitG3zY2CiY7XHdLiz3bZOwa6oDxNqEMv7zZkV+cj5DOdz0cQ1BP5Hjgw==}
     dev: true
 
+  /@socket.io/component-emitter@3.1.0:
+    resolution: {integrity: sha512-+9jVqKhRSpsc591z5vX+X5Yyw+he/HCB4iQ/RYxw35CEPaY1gnsNE43nf9n9AaYjAQrTiI/mOwKUKdUs9vf7Xg==}
+    dev: false
+
   /@stitches/core@1.2.8:
     resolution: {integrity: sha512-Gfkvwk9o9kE9r9XNBmJRfV8zONvXThnm1tcuojL04Uy5uRyqg93DC83lDebl0rocZCfKSjUv+fWYtMQmEDJldg==}
     dev: true
@@ -3394,6 +3404,25 @@ packages:
 
   /emoji-regex@9.2.2:
     resolution: {integrity: sha512-L18DaJsXSUk2+42pv8mLs5jJT2hqFkFE4j21wOmgbUqsZ2hL72NsUU785g9RXgo3s0ZNgVl42TiHp3ZtOv/Vyg==}
+
+  /engine.io-client@6.5.3:
+    resolution: {integrity: sha512-9Z0qLB0NIisTRt1DZ/8U2k12RJn8yls/nXMZLn+/N8hANT3TcYjKFKcwbw5zFQiN4NTde3TSY9zb79e1ij6j9Q==}
+    dependencies:
+      '@socket.io/component-emitter': 3.1.0
+      debug: 4.3.4
+      engine.io-parser: 5.2.1
+      ws: 8.11.0
+      xmlhttprequest-ssl: 2.0.0
+    transitivePeerDependencies:
+      - bufferutil
+      - supports-color
+      - utf-8-validate
+    dev: false
+
+  /engine.io-parser@5.2.1:
+    resolution: {integrity: sha512-9JktcM3u18nU9N2Lz3bWeBgxVgOKpw7yhRaoxQA3FUDZzzw+9WlA6p4G4u0RixNkg14fH7EfEc/RhpurtiROTQ==}
+    engines: {node: '>=10.0.0'}
+    dev: false
 
   /enhanced-resolve@5.15.0:
     resolution: {integrity: sha512-LXYT42KJ7lpIKECr2mAXIaMldcNCh/7E0KBKOu4KSfkHmP+mZmSs+8V5gBAqisWBy0OO4W5Oyys0GO1Y8KtdKg==}
@@ -6495,6 +6524,30 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
+  /socket.io-client@4.7.4:
+    resolution: {integrity: sha512-wh+OkeF0rAVCrABWQBaEjLfb7DVPotMbu0cgWgyR0v6eA4EoVnAwcIeIbcdTE3GT/H3kbdLl7OoH2+asoDRIIg==}
+    engines: {node: '>=10.0.0'}
+    dependencies:
+      '@socket.io/component-emitter': 3.1.0
+      debug: 4.3.4
+      engine.io-client: 6.5.3
+      socket.io-parser: 4.2.4
+    transitivePeerDependencies:
+      - bufferutil
+      - supports-color
+      - utf-8-validate
+    dev: false
+
+  /socket.io-parser@4.2.4:
+    resolution: {integrity: sha512-/GbIKmo8ioc+NIWIhwdecY0ge+qVBSMdgxGygevmdHj24bsfgtCmcUUcQ5ZzcylGFHsN3k4HB4Cgkl96KVnuew==}
+    engines: {node: '>=10.0.0'}
+    dependencies:
+      '@socket.io/component-emitter': 3.1.0
+      debug: 4.3.4
+    transitivePeerDependencies:
+      - supports-color
+    dev: false
+
   /source-map-js@1.0.2:
     resolution: {integrity: sha512-R0XvVJ9WusLiqTCEiGCmICCMplcCkIwwR11mOSD9CR5u+IXYdiseeEuXCVAjS54zqwkLcPNnmU4OeJ6tUrWhDw==}
     engines: {node: '>=0.10.0'}
@@ -7183,6 +7236,24 @@ packages:
     resolution: {integrity: sha512-l4Sp/DRseor9wL6EvV2+TuQn63dMkPjZ/sp9XkghTEbV9KlPS1xUsZ3u7/IQO4wxtcFB4bgpQPRcR3QCvezPcQ==}
     dev: true
 
+  /ws@8.11.0:
+    resolution: {integrity: sha512-HPG3wQd9sNQoT9xHyNCXoDUa+Xw/VevmY9FoHyQ+g+rrMn4j6FB4np7Z0OhdTgjx6MgQLK7jwSy1YecU1+4Asg==}
+    engines: {node: '>=10.0.0'}
+    peerDependencies:
+      bufferutil: ^4.0.1
+      utf-8-validate: ^5.0.2
+    peerDependenciesMeta:
+      bufferutil:
+        optional: true
+      utf-8-validate:
+        optional: true
+    dev: false
+
+  /xmlhttprequest-ssl@2.0.0:
+    resolution: {integrity: sha512-QKxVRxiRACQcVuQEYFsI1hhkrMlrXHPegbbd1yn9UHOmRxY+si12nQYzri3vbzt8VdTTRviqcKxcyllFas5z2A==}
+    engines: {node: '>=0.4.0'}
+    dev: false
+
   /y18n@5.0.8:
     resolution: {integrity: sha512-0pfFzegeDWJHJIAmTLRP2DwHjdF5s7jo9tuztdQxAhINCdvS+3nGINqPd00AphqJR/0LhANUS6/+7SCb98YOfA==}
     engines: {node: '>=10'}
@@ -7214,8 +7285,8 @@ packages:
       yargs-parser: 21.1.1
     dev: false
 
-  /yjs@13.6.10:
-    resolution: {integrity: sha512-1JcyQek1vaMyrDm7Fqfa+pvHg/DURSbVo4VmeN7wjnTKB/lZrfIPhdCj7d8sboK6zLfRBJXegTjc9JlaDd8/Zw==}
+  /yjs@13.6.11:
+    resolution: {integrity: sha512-FvRRJKX9u270dOLkllGF/UDCWwmIv2Z+ucM4v1QO1TuxdmoiMnSUXH1HAcOKOrkBEhQtPTkxep7tD2DrQB+l0g==}
     engines: {node: '>=16.0.0', npm: '>=8.0.0'}
     dependencies:
       lib0: 0.2.88
@@ -7229,11 +7300,37 @@ packages:
   /zwitch@2.0.4:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}
 
-  github.com/yz13-env/ui/61cad80834942664181887b5ab5d109f35c4260d(@types/react-dom@18.2.18)(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(tailwindcss@3.4.0):
-    resolution: {tarball: https://codeload.github.com/yz13-env/ui/tar.gz/61cad80834942664181887b5ab5d109f35c4260d}
-    id: github.com/yz13-env/ui/61cad80834942664181887b5ab5d109f35c4260d
-    name: ui
+  github.com/yz13-env/api/4bd243d4897146df1d6b6a961d3ab565fdfd53cd(react-dom@18.2.0)(react@18.2.0):
+    resolution: {tarball: https://codeload.github.com/yz13-env/api/tar.gz/4bd243d4897146df1d6b6a961d3ab565fdfd53cd}
+    id: github.com/yz13-env/api/4bd243d4897146df1d6b6a961d3ab565fdfd53cd
+    name: api
     version: 0.0.3
+    engines: {node: '21'}
+    peerDependencies:
+      react: '18'
+      react-dom: '18'
+    dependencies:
+      ahooks: 3.7.8(react@18.2.0)
+      firebase: 10.7.1
+      jsonwebtoken: 8.5.1
+      luxon: 3.4.4
+      next: 13.5.6(react-dom@18.2.0)(react@18.2.0)
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+      react-firebase-hooks: 5.1.1(firebase@10.7.1)(react@18.2.0)
+    transitivePeerDependencies:
+      - '@babel/core'
+      - '@opentelemetry/api'
+      - '@react-native-async-storage/async-storage'
+      - babel-plugin-macros
+      - sass
+    dev: false
+
+  github.com/yz13-env/ui/d622954535bdf7fd5956111cf7483dcaee87a65c(@types/react-dom@18.2.18)(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(tailwindcss@3.4.0):
+    resolution: {tarball: https://codeload.github.com/yz13-env/ui/tar.gz/d622954535bdf7fd5956111cf7483dcaee87a65c}
+    id: github.com/yz13-env/ui/d622954535bdf7fd5956111cf7483dcaee87a65c
+    name: ui
+    version: 0.0.5
     engines: {node: '21'}
     peerDependencies:
       react: '18'
@@ -7245,15 +7342,19 @@ packages:
       '@radix-ui/react-popover': 1.0.7(@types/react-dom@18.2.18)(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)
       '@radix-ui/react-separator': 1.0.3(@types/react-dom@18.2.18)(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)
       '@radix-ui/react-slot': 1.0.2(@types/react@18.2.45)(react@18.2.0)
+      ahooks: 3.7.8(react@18.2.0)
+      api: github.com/yz13-env/api/4bd243d4897146df1d6b6a961d3ab565fdfd53cd(react-dom@18.2.0)(react@18.2.0)
       class-variance-authority: 0.7.0
       clsx: 2.1.0
       firebase: 10.7.1
+      luxon: 3.4.4
       next: 13.5.6(react-dom@18.2.0)(react@18.2.0)
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
       react-firebase-hooks: 5.1.1(firebase@10.7.1)(react@18.2.0)
       react-icons: 4.12.0(react@18.2.0)
       react-responsive: 9.0.2(react@18.2.0)
+      socket.io-client: 4.7.4
       tailwind-merge: 2.2.0
       tailwindcss-animate: 1.0.7(tailwindcss@3.4.0)
     transitivePeerDependencies:
@@ -7263,6 +7364,9 @@ packages:
       - '@types/react'
       - '@types/react-dom'
       - babel-plugin-macros
+      - bufferutil
       - sass
+      - supports-color
       - tailwindcss
+      - utf-8-validate
     dev: false

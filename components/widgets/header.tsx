@@ -3,6 +3,7 @@ import NotesMark from "../shared/notes-mark"
 import { cookies } from "next/headers"
 import User from "../shared/user-circle"
 import { ProjectsGrid } from "ui"
+import NotificationsWrapper from '@/components/shared/notifications'
 
 const Header = () => {
     const cookiesList = cookies()
@@ -13,6 +14,7 @@ const Header = () => {
             <div className='w-full max-w-7xl mx-auto flex items-center justify-between px-6 h-full'>
                 <Link href='/'><NotesMark /></Link>
                 <div className="w-fit h-fit flex items-center gap-4">
+                    <NotificationsWrapper />
                     <ProjectsGrid />
                     <User />
                 </div>

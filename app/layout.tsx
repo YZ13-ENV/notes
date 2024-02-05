@@ -16,7 +16,7 @@ type LayoutProps = {
 export default function RootLayout({ children }: LayoutProps) {
     return (
       <html lang="en" className={`${first_font.className} ${first_font.variable}`}>
-        <body className='min-h-screen dark'>
+        <body className='relative min-h-screen dark'>
           { children }
         </body>
       </html>

@@ -9,7 +9,7 @@ type Props = {
 }
 const NoteCard = ({ note, maxLetters=250 }: Props) => {
     return (
-            <Link href={`/note/${note.doc_id}`} className='rounded-xl p-4 transition-colors border group bg-background hover:bg-card hover:border-primary cursor-pointer relative inline-flex flex-col w-full gap-2 mb-6 h-fit'>
+            <Link href={`/note/${note.doc_id}`} className='rounded-xl p-4 transition-colors border group bg-background hover:bg-card hover:border-primary cursor-pointer relative inline-flex flex-col w-full gap-2 h-fit'>
                 <span className='normal-cate text-lg font-semibold'>{note.name}</span>
                 <Markdown>{ note.content.length > maxLetters ? note.content.slice(0, maxLetters) + '...' : note.content }</Markdown>
                 <hr className='mt-1' />

@@ -1,18 +1,27 @@
+import { Button } from "@/components/ui/button"
+import { Separator } from "@/components/ui/separator"
+import { getVisitorId } from "@/helpers/cookies"
+import { notes } from "api"
+import Link from "next/link"
+import SidebarWrapper from "./wrapper"
 
-const Sidebar = () => {
+const Sidebar = async() => {
+    const visitorId = getVisitorId()
+    const notesList = visitorId ? await notes.getAllForUser(visitorId) : []
     return (
-        <aside className='w-80 p-6 h-full border-r'>
-            <div className="w-full h-10 rounded-lg hover:bg-muted cursor-pointer flex items-center px-3">
-                <span className="text-accent-foreground">Заметки</span>
-            </div>
-            <div className="w-full h-10 rounded-lg hover:bg-muted cursor-pointer flex items-center px-3">
-                <span className="text-accent-foreground">Новая заметка</span>
-            </div>
-            <hr className="my-2" />
-            <div className="w-full h-10 rounded-lg hover:bg-muted cursor-pointer flex items-center px-3">
-                <span className="text-accent-foreground">**Название заметки**</span>
-            </div>
-        </aside>
+        <SidebarWrapper>
+            <Button className="justify-start" variant='ghost'>
+                <Link href='/'>Заметки</Link>
+            </Button>
+            <Separator className="my-4" />
+            {
+                notesList.map(note =>
+                <Button key={note.doc_id + '-aside'} asChild className="justify-start" variant='ghost'>
+                    <Link href={`/note/${note.doc_id}`}>{ note.name }</Link>
+                </Button>
+                )
+            }
+        </SidebarWrapper>
     )
 }
 

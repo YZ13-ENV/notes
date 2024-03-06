@@ -1,10 +1,9 @@
-import LoginDrawer from "./(auth)/_components/login/login-drawer";
-import { Suspense } from "react";
-import dynamic from "next/dynamic";
 import HeaderSkeleton from "@/components/skeletons/header";
+import RecentNotes from "@/components/widgets/recent-note";
 import Sidebar from "@/components/widgets/side-bar";
 import { getVisitorId } from "@/helpers/cookies";
-import RecentNotes from "@/components/widgets/recent-note";
+import dynamic from "next/dynamic";
+import { Suspense } from "react";
 const Header = dynamic(() => import('@/components/widgets/header'), {
   loading: () => <HeaderSkeleton />
 })
@@ -16,7 +15,6 @@ export default function Home() {
       <div className="w-full h-full flex items-center justify-center">
         <span>Необходимо авторизоваться</span>
       </div>
-      <LoginDrawer />
     </main>
   )
   return (
